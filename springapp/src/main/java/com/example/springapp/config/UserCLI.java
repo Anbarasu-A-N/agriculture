@@ -31,7 +31,7 @@ public class UserCLI implements CommandLineRunner {
                 .userId(1)
                 .firstName("Allsmart Admin")
                 .lastName("Access")
-                .age(20)
+                .age(22)
                 .emailId("projectdevopsx@gmail.com")
                 .password(passwordEncoder.encode("Devops@*#123"))
                 .gender("Male")

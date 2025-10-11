@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import './LoginPage.css';
+import './Login.css';
 import { useDispatch } from 'react-redux';
 import { loginSuccess, setIsLoggedIn } from './redux/actions'; // Import loginSuccess and setIsLoggedIn actions
 import Hide from "./Pages/Images/Hide-password.png";

@@ -207,54 +207,35 @@ public class UserFunctionController {
     }
 
 
-    /* 
-
-
-    @PostMapping("/verifyOtpAndUpdatePassword")
-    public ResponseEntity<String> verifyOtpAndUpdatePassword(
-            @RequestParam String emailId,
-            @RequestParam String otp,
-            @RequestParam String newPassword) {
-
-        Users user = userFunctionService.findByEmailId(emailId);
-
-        if (user != null && user.getOtp() != null && user.getOtp().equals(otp)) {
-            // OTP is valid, update the password
-            user.setPassword(newPassword);
-            user.setOtp(null); // Clear the OTP after successful verification
-            userFunctionService.userFunction(user);
-
-            return new ResponseEntity<>("Password updated successfully", HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>("Invalid OTP or user not found", HttpStatus.BAD_REQUEST);
-        }
-    }
-    
-    */
-
     
     @Autowired
     private PasswordEncoder passwordEncoder; // Inject PasswordEncoder
 
     @PostMapping("/verifyOtpAndUpdatePassword")
-    public ResponseEntity<String> verifyOtpAndUpdatePassword(
-            @RequestParam String emailId,
-            @RequestParam String otp,
-            @RequestParam String newPassword) {
-
-        Users user = userFunctionService.findByEmailId(emailId);
-
-        if (user != null && user.getOtp() != null && user.getOtp().equals(otp)) {
-            // OTP is valid, update the password
-            user.setPassword(passwordEncoder.encode(newPassword)); // Encode the new password
-            user.setOtp(null); // Clear the OTP after successful verification
-            userFunctionService.userFunction(user);
-
-            return new ResponseEntity<>("Password updated successfully", HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>("Invalid OTP or user not found", HttpStatus.BAD_REQUEST);
-        }
+public ResponseEntity<String> verifyOtpAndUpdatePassword(
+        @RequestParam String emailId,
+        @RequestParam String otp,
+        @RequestParam String newPassword) {
+    // Validate password strength
+    if (newPassword.length() < 8) {
+        return new ResponseEntity<>("Password must be at least 8 characters long", HttpStatus.BAD_REQUEST);
     }
+    if (!newPassword.matches(".*[!@#$%^&*(),.?\":{}|<>].*")) {
+        return new ResponseEntity<>("Password must include at least one special character", HttpStatus.BAD_REQUEST);
+    }
+
+    Users user = userFunctionService.findByEmailId(emailId);
+    if (user != null && user.getOtp() != null && user.getOtp().equals(otp)) {
+        user.setPassword(passwordEncoder.encode(newPassword));
+        user.setOtp(null);
+        userFunctionService.userFunction(user);
+        System.out.println("Password updated for user: " + emailId);
+        return new ResponseEntity<>("Password updated successfully", HttpStatus.OK);
+    } else {
+        System.out.println("OTP verification failed for email: " + emailId);
+        return new ResponseEntity<>("Invalid OTP or user not found", HttpStatus.BAD_REQUEST);
+    }
+}
 
 
     
