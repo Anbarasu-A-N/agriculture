@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "application.security.jwt.secret_key",
+    "type": "java.lang.String",
+    "description": "A description for 'application.security.jwt.secret_key'"
+  },
+  {
+    "name": "upload.path",
+    "type": "java.lang.String",
+    "description": "A description for 'upload.path'"
+  },
+  {
+    "name": "cloud.aws.s3.bucket.name",
+    "type": "java.lang.String",
+    "description": "A description for 'cloud.aws.s3.bucket.name'"
+  },
+  {
+    "name": "cloud.aws.s3.region",
+    "type": "java.lang.String",
+    "description": "A description for 'cloud.aws.s3.region'"
+  }
+]}

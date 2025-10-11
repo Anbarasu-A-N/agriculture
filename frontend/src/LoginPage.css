@@ -1,0 +1,116 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    max-width: 400px;
+    padding-bottom: 25px;
+    border: 1px solid rgb(255, 255, 255);
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(122, 122, 122, 0.3)),#ffffff00;
+    backdrop-filter: blur(0.5px);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-container h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    color: rgb(255, 111, 0);
+
+  }
+  
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .login-container label {
+    
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .login-container input[id='loginemailinput'], .login-container input[id='loginpwdinput'] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+  }
+  
+  
+  .login-container button[id='login'] {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+  }
+  
+  .login-container button[id='login']:hover {
+    background-color: #e69c13;
+  }
+  
+  .login-container p {
+    margin-top: 10px;
+    color: green;
+  }
+  
+  .login-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .password-input-container {
+    position: relative;
+  }
+  
+  .password-toggle-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .password-toggle-icon.visible {
+    color: #4CAF50; /* Change color to your preferred color */
+  }
+  
+img[id=hide]{
+  height: 18px;
+  margin-top: 8px;
+  margin-right: 4.5px;
+  width: 18px;
+  margin-bottom: 0px;
+
+}
+
+Link[id='admingo']{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+ 
+}
+
+p[id='admingo']{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+.login-body h1{
+  font-family: 'Times New Roman', Times, serif;
+}

@@ -1,0 +1,69 @@
+.checkloanstatus-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+div[id='checkstatus'] {
+  max-width: 100%;
+  height: 520px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 20px;
+  margin: 30px 0;
+  
+}
+
+div[id='checkstatus1'] {
+  max-width: 100%;
+  height: 580px;
+  border: 1px solid #ccc;
+  background-color: rgb(168, 168, 168);
+  padding-top: 2px;
+  padding-left: 25px;
+  padding-bottom: 10px;
+  padding-right: 25px;
+}
+
+div[id='checkstatus2'] {
+  max-width: 100%;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+.checkstatus-label {
+  font-size: 18px;
+  background-color: rgb(168, 168, 168);
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  display: inline-block;
+  min-width: 300px; /* Adjust the min-width based on your requirement */
+}
+
+.checkstatus-value {
+  font-size: 18px;
+  background-color: rgb(168, 168, 168);
+  min-width: 565px;
+  font-family: 'Times New Roman', Times, serif;
+  padding-left: 15px;
+  color: #ffffff;
+  display: inline-block;
+  flex: 1;
+  /* margin-left: 20px; /* Adjust the margin-left based on your requirement */
+}
+
+
+
+.pending{
+  color: #b64f4f;
+}
+
+.checkstatusbgcolor{
+  background-color: #ccc;
+  height: auto;
+  margin: 0px;
+}

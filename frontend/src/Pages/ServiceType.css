@@ -1,0 +1,73 @@
+/* Styles for the container of topics */
+.servicetypetitle1 {
+    float: left;
+    width: 400px;
+    margin-left: 30px;
+    height: 388px;
+  }
+  
+  /* Styles for each topic */
+  .topic {
+    cursor: pointer;
+    margin-bottom: 12px;
+    margin-top: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 30px;
+  }
+  
+  /* Active topic style */
+  .topic.active {
+    color: rgb(3, 158, 81);
+  }
+  
+  /* Styles for the container of details */
+  .servicetypetitle2 {
+    float: right;
+    width: 1000px;
+    position: relative;
+    overflow-y: scroll;
+    border: 5px;
+    border-color: aqua;
+    height: 380px; /* Limit the height */
+  }
+  
+.servicetypetitle{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-color: black;
+    border: 10px;
+    padding: 5px;
+}
+
+h2[id='servicetype']{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p[id='servicetype']{
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px;
+    margin-left: 50px;
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: 10px;
+    text-align: justify;
+}
+
+h1[id='servicetype']{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+.servicetypebgcolor{
+  background-color: #ccc;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}

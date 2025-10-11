@@ -1,0 +1,99 @@
+.deleteuser-container {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    margin-left: 20px;
+  }
+
+  .deleteuser-button {
+    display: block;
+    margin-top: 15px;
+    margin-left: 20px;
+    width: 500px;
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3b3b3b;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+  
+}
+
+.deleteuser-button1 {
+        display: block;
+        margin-top: 5px;
+        width: 200px;
+        padding: 10px;
+        font-size: 12px;
+        border: none;
+        border-radius: 5px;
+        background-color: #3b3b3b;
+        color: #fff;
+        cursor: pointer;
+      }
+
+button[id="deleteuser-button"]:hover {
+  background-color: #f9a826;
+}
+
+  
+  button[id="deleteuser-button"]:hover {
+    background-color: #f9a826;
+    
+  }
+
+  input[id='delete-user-pwd']{
+    padding: 10px;
+    border-radius: 1px;
+    width: 300px;
+  }
+
+
+  .deleteuser-sidebar {
+    width: 500px;
+    background-color: #f0f0f0;
+    padding: 20px;
+
+  }
+
+  .deleteuser-container label {
+    
+    margin-top: 10px;
+    margin-left: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 410px;
+  }
+
+  .password-input-del-container[id='delete-user-pwd'] {
+    position: relative;
+    width: 100%;
+  }
+  
+  .password-del-toggle-icon {
+    position: absolute;
+    transform: translateY(-50%);
+    margin-top: 18px;
+    margin-left: -30px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .password-del-toggle-icon.visible {
+    color: #4CAF50; /* Change color to your preferred color */
+  }
+img[id=delhide]{
+  height: 18px;
+  margin-top: 10px;
+  margin-right: 1px;
+  margin-left: 4px;
+  width: 18px;
+  margin-bottom: 0px;
+
+}

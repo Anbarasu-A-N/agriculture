@@ -1,0 +1,67 @@
+/* Government.css */
+
+.government-container {
+    padding: 20px;
+    max-width: 865px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(175, 175, 175);
+  }
+  
+  .government-container h2 {
+    color: #333;
+    text-align: center;
+  }
+  
+  .government-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .government-container li {
+    margin-bottom: 10px;
+  }
+  
+  .government-container a {
+    color: #007517;
+    text-decoration: none;
+  }
+  
+  .government-container a:hover {
+    text-decoration: underline;
+  }
+  
+
+
+  strong[id='gov-link'] {
+    font-size: 18px;
+    background-color: rgb(168, 168, 168);
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    display: inline-block;
+    min-width: 230px; /* Adjust the min-width based on your requirement */
+  }
+  
+  a[id='gov-link'] {
+    font-size: 18px;
+    background-color: rgb(168, 168, 168);
+    min-width: 560px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 15px;
+    color: #ffffff;
+    display: inline-block;
+    flex: 1;
+    /* margin-left: 20px; /* Adjust the margin-left based on your requirement */
+  }
+  
+
+  .govbgcolor{
+    background-color: #ccc;
+  }

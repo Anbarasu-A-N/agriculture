@@ -1,0 +1,119 @@
+
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid rgb(255, 255, 255);
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3)), #ffffff00;
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+.register-container h2 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
+  color: rgb(255, 111, 0);
+}
+
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-container label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+
+.register-container input[id='register'] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 250px;
+}
+
+.register-container select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 250px;
+}
+
+.register-container button[id='register'] {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.register-container button[id='register']:hover {
+  background-color: #e69c13;
+}
+
+.register-container text {
+  width: 200px;
+  height: 35px;
+}
+
+.register-body h1 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.message {
+  color: rgb(255, 115, 0);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: 5000;
+}
+
+.registerpassword-input-container {
+  position: relative;
+}
+
+.registerpassword-toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+}
+
+.registerpassword-toggle-icon.visible {
+  color: #4CAF50;
+}
+
+img[id=register] {
+  height: 18px;
+  margin-top: 8px;
+  margin-right: 4px;
+  width: 18px;
+  margin-bottom: 0px;
+}
+
+.register-container input[id='register1'] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 250px;
+}

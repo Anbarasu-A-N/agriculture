@@ -1,0 +1,89 @@
+ .profile-container {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+}
+
+.profile-sidebar {
+  width: 350px;
+  height: 100vh;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.profile-image img {
+  margin-top: 5px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+
+.profile-info h2 {
+  margin: 0;
+}
+
+.profile-info h4 {
+  margin-top: 28px;
+}
+
+.profile-info p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.profile-button {
+  display: block;
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3b3b3b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.profile-button1 {
+  display: block;
+  margin-top: 25px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3b3b3b;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[id="profile-button1"]:hover {
+  background-color: #f9a826;
+}
+
+button[id="profile-button"]:hover {
+  background-color: #f9a826;
+}
+
+input[type="file"]{
+  width: 310px;
+}
+.profile-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.profile-section {
+  margin-bottom: 20px;
+}
+
+.profile-section h2 {
+  margin: 0;
+} 
+
+
+.profilebgcolor{
+  background-color: #ccc;
+}

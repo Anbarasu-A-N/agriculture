@@ -1,0 +1,82 @@
+form[id='userdetails'] {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  label[id='userdetails-label'] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Align label to the left, input to the right */
+    margin-bottom: 10px;
+    margin-left: 20px; /* Adjusted margin for labels */
+  }
+  
+  input[id='userdetails-input'] {
+    width: 250px;
+    margin-right: 20px;
+    padding: 10px;
+  }
+
+  select[id='userdetails-input'] {
+    width: 250px;
+    margin-right: 20px;
+    padding: 10px;
+  }
+
+  .userdetails-container {
+    width: 500px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-left: 20px; /* Adjusted margin for the container */
+  }
+  
+  .userdetails-container label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Align label to the left, input to the right */
+    margin-bottom: 10px;
+    margin-left: 20px; /* Adjusted margin for labels */
+  }
+  
+  .userdetails-container button {
+    margin-top: 10px;
+  }
+  
+  .userdetails-button {
+    display: block;
+    margin-top: 5px;
+    margin-left: 20px;
+    width: 500px;
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3b3b3b;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button[id="userdetails-button"]:hover {
+    background-color: #f9a826;
+  }
+
+  button[id='userdetails-submit']:hover {
+    background-color: #f9a826;
+  }
+  
+  .userdetails-submit {
+    display: block;
+    margin-top: 5px;
+    width: 200px;
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3b3b3b;
+    color: #fff;
+    cursor: pointer;
+  }

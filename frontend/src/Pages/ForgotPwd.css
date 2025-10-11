@@ -1,0 +1,100 @@
+.forgot-container {
+  width: 450px; /* Set the width of the container as per your design */
+  margin: auto; /* Center the container horizontally */
+  border: 1px solid #464242;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0); 
+  border: 1px solid #ffffff;
+  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(122, 122, 122, 0.3)),#ffffff00;
+  backdrop-filter: blur(0.5px);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.forgot-container h2{
+  font-family: 'Times New Roman', Times, serif;
+  padding: 10px;
+  text-align: center;
+  font-size: 25px;
+  color: rgb(255, 111, 0);
+}
+
+.forgot-con {
+  margin-bottom: 10px; /* Add some space between elements */
+  width: 450px;
+  height: 300px;
+}
+
+#forgot-label {
+  display: inline-block; /* Make the label and input appear on the same line */
+  width: 150px; /* Adjust the width as needed */
+  margin-right: 10px; /* Add some space between label and input */
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  text-align: left;
+}
+
+#forgot-input {
+  width: 200px; /* Adjust the width as needed */
+  font-family: 'Times New Roman', Times, serif;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+p[id="forgot"]{
+  text-align: center;
+  color: #af814c;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+  
+ button[id="forgot"] {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+button[id="forgot"]:hover {
+  background-color: #e69c13;
+}
+
+h1[id='forgot-h1']{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+img[id=forgothide]{
+  height: 18px;
+  margin-top: 10px;
+  margin-right: 4.5px;
+  width: 18px;
+  margin-bottom: 0px;
+
+}
+
+.forgotpassword-toggle-icon {
+  position: absolute;
+  top: 45%;
+  right: 50px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+}
+
+.forgotpassword-toggle-icon.visible {
+  color: #4CAF50; /* Change color to your preferred color */
+}
+
+.forgotpassword-input-container {
+  position: relative;
+}

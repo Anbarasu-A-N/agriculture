@@ -1,0 +1,101 @@
+
+.Profile[id="usernavbar"] {
+  margin-right: 15px;
+}
+
+nav[id='usernavbar'] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #aaaaaa;
+  font-size: 1px;
+  padding: 12px 0px 5px 0px;
+}
+
+.search-bar[id="usernavbar"] {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input[id="usernavbar"] {
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 17px;
+  font-family: "Times New Roman", Times, serif;
+  border: none;
+  margin-left: 300px;
+  margin-right: 10px;
+}
+
+.search-bar button[id="usernavbarser"] {
+  padding: 5px 10px;
+  border-radius: 2px;
+  border: none;
+  background-color: #00c742;
+  color: white;
+  font-size: 17px;
+  font-family: "Times New Roman", Times, serif;
+  cursor: pointer;
+}
+
+.nav-links[id="usernavbar"] {
+  display: flex;
+  list-style: none;
+}
+
+
+
+.nav-links[id="usernavbar"] a {
+  text-decoration: none;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  color: #333;
+  padding: 8px 10px 8px 10px;
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links[id="usernavbar"] a:hover {
+  background-color: #51f588;
+  color: white;
+}
+
+.dropdown-menu[id="usernavbar"] {
+  position: absolute;
+  top: 28px;
+  left: 0px;
+  width: 200px;
+  text-align: left;
+  align-items: self-start;
+  display: none;
+  background-color: #51f588;
+  border-radius: 2px;
+}
+
+.dropdown-menu[id="usernavbar"] a {
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 15px;
+  margin-bottom: 10px;
+}
+
+
+
+.dropdown-menu[id="usernavbar"] li {
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 15px;
+  margin-bottom: 10px;
+  font-family: "Arial", sans-serif; 
+  font-size: 10px; 
+}
+
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown {
+  position: relative;
+}
+

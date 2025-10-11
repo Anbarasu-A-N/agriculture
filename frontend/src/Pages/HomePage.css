@@ -1,0 +1,114 @@
+.home{
+  height: auto;
+  background-color: #ccc;
+}
+
+  .home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .homecontainer{
+    background-color: #ccc;
+  }
+  
+  .container2 {
+    width: 820px;
+    height: 530px;
+    margin: 0 auto;
+    margin-right: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    border: 1px solid #ccc;
+  }
+  
+  .selecthome{
+    margin-bottom: 10px;
+  }
+  
+ 
+  select[id="stateSelector"] {
+    width: 50%;
+    height: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  label[id="stateSelector"] {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+   
+  }
+  
+  .container1 {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+  }
+
+  .slide {
+    width: 350px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  .slide1 {
+    width: 350px;
+    margin-left: 30px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  label[id='mainmenu']{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: #127a34;
+    font-weight: 700;
+  }
+
+
+  button[id="slide-button"] {
+    display: block;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3b3b3b;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button[id="slide-button"]:hover {
+    background-color: #22b129;
+  }
+
+  h5[id='selectstate']{
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 200;
+  }
+
+  h2[id='selectstate']{
+    font-size: 30px;
+  }
+
+  h6[id='selectstate']{
+    font-size: 15px;
+    font-weight: 100;
+  }
+
+  li[id='selectstate']{
+    padding: 10px;
+  }

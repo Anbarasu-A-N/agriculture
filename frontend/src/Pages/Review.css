@@ -1,0 +1,87 @@
+/* Review.css */
+.review-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.review-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.review-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-container label {
+  margin-bottom: 0px;
+}
+
+.review-container textarea {
+  resize: vertical;
+  margin-bottom: 20px;
+}
+
+/* Star Rating Styles */
+.review-container .star-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.review-container .star-rating label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+
+/* Styling the stars from the react-star-rating-component library */
+.review-container .star-rating .react-star-rating__star {
+  font-size: 24px; /* Adjust the star size as needed */
+  color: #ffc107; /* Star color when it's selected (filled) */
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+
+.review-container .star-rating .react-star-rating__star--active {
+  color: #ff9800; /* Star color when it's active (hovered) */
+}
+
+.review-container .star-rating .react-star-rating__star--disabled {
+  color: #ccc; /* Star color when it's disabled */
+  cursor: not-allowed;
+}
+
+.review-container .autofilled-info {
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.review-container .autofilled-info h4 {
+  margin: 5px 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.review-container button {
+  padding: 10px 20px;
+  background-color: #f9a826;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.review-container button:hover {
+  background-color: #0a0a0a;
+}
+
+.reviewbgcolor{
+  background-color: #ccc;
+}

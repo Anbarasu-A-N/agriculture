@@ -1,0 +1,36 @@
+/* Add this CSS to style your GrievancesList component */
+
+.grievances {
+    max-width: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(175, 175, 175);
+  }
+  
+  .grievances h2 {
+    color: #333;
+    text-align: center;
+  }
+  
+ .grievances ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .grievances li {
+    margin-bottom: 10px;
+  }
+  
+  .grievances strong {
+    color: #5c3c00;
+  }
+  
+  .gribgcolor{
+    background-color: #ccc;
+  }

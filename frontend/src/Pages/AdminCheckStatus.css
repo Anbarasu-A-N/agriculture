@@ -1,0 +1,92 @@
+.admincheckstatuscontainer {
+    margin: 20px;
+  }
+  
+  h1[id='admincheckstatus'] {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .search-container[id='admincheckstatus1'] {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  select[id='admincheckstatus'] {
+    width: 160px;
+  }
+  
+  .search-container[id='admincheckstatus1'] label {
+    margin-right: 10px;
+  }
+  
+  input[id="admincheckstatus"], select[id='admincheckstatus'], button[id='admincheckstatus'] {
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  select[id='admincheckstatusselect' ]{
+    height: 20px;
+    width: 80px;
+    margin-bottom: 5px;
+  }
+
+  
+  button[id='admincheckstatusselect'] {
+    width: 80px;
+    background-color: #ff9d00;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[id='admincheckstatusselect']:hover {
+    background-color: #282218;
+  }
+  
+  button[id="admincheckstatus"] {
+    width: 100px;
+    background-color: #ff9d00;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[id='admincheckstatus']:hover {
+    background-color: #282218;
+  }
+  
+  .admincheckstatustablecontainer {
+    overflow-y: auto;
+    max-height: 75%; /* You can adjust the max-height as needed */
+  }
+  
+  table[id='admincheckstatus'] {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .admincheckstatustablecontainer thead th, .admincheckstatustablecontainer tbody td {
+    border: 5px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .admincheckstatustablecontainer thead th {
+    background-color: #a3a3a3;
+  }
+  
+  .admincheckstatustablecontainer tbody tr:nth-child(even) {
+    background-color: #f9f9f961;
+  }
+  
+  .admincheckstatustablecontainer tbody tr:nth-child(odd) {
+    background-color: #7e7e7e61;
+  }
+  

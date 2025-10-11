@@ -1,0 +1,70 @@
+.adminsupportcontainer {
+    margin: 20px;
+  }
+  
+  h1[id='adminsupport'] {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .search-container[id='adminsupport1'] {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  select[id='adminsupport'] {
+    width: 160px;
+  }
+  
+  .search-container[id='adminsupport1'] label {
+    margin-right: 10px;
+  }
+  
+  input[id="adminsupport"], select[id='adminsupport'], button[id='adminsupport'] {
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  button[id="adminsupport"] {
+    width: 100px;
+    background-color: #ff9d00;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[id='adminsupport']:hover {
+    background-color: #282218;
+  }
+  
+  .adminsupporttablecontainer {
+    overflow-y: auto;
+    max-height: 75%; /* You can adjust the max-height as needed */
+  }
+  
+  table[id='adminsupport'] {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .adminsupportcontainer thead th, .adminsupportcontainer tbody td {
+    border: 5px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .adminsupportcontainer thead th {
+    background-color: #a3a3a3;
+  }
+  
+  .adminsupportcontainer tbody tr:nth-child(even) {
+    background-color: #f9f9f961;
+  }
+  .adminsupportcontainer tbody tr:nth-child(odd) {
+    background-color: #7e7e7e61;
+  }
+  

@@ -1,0 +1,101 @@
+.pdf-default-container{
+ 
+    width: 680px; /* Set a default width for larger screens */
+    height: 550px; /* Set the default height for the container */
+    margin-bottom: 20px;
+    background-color: rgb(103, 103, 103);
+    padding-top: 10px;
+   
+}
+
+.pdf-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 67vh; /* Optional: Set to 100% viewport height for a full-screen appearance */
+  }
+  
+  .pdf-container {
+    max-width: 100%; /* Make the container responsive */
+    width: 600px; /* Set a default width for larger screens */
+    height: 450px; /* Set the default height for the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: Add a border for visibility */
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: auto;
+  }
+  
+  .pdf-container.visible {
+    display: block; /* Display the container when the 'visible' class is present */
+  }
+  
+  .pdf-viewer {
+    width: 100%; /* Take full width of the container */
+    height: 100%; /* Take full height of the container */
+    
+  }
+  
+  .pdf-controls {
+    display: flex;
+    flex-direction: row; /* Make the buttons appear in a row */
+    justify-content: space-around; /* Adjust the spacing between buttons */
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media screen and (max-width: 600px) {
+    .pdf-container,.pdf-default-container, .pdf-viewer {
+      width: 100%; /* Set the width to 100% for smaller screens */
+    }
+  }
+  
+
+  
+.form-button {
+  display: block;
+  margin-top: 25px;
+  display: block;
+  width: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3b3b3b;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[id="form-button"]:hover {
+  background-color: #f9a826;
+}
+
+.formfirst {
+  flex: 1; /* Take up remaining available space */
+  margin-left: 30px;
+  align-items: center;
+}
+
+.formsecond {
+  margin-top: 20px;
+  width: 50%;
+  height: 70vh;
+  margin-right: 30px; /* Add margin to separate the two columns */
+}
+
+.form {
+  display: flex;
+}
+
+
+.formbgcolor{
+  background-color: #ccc;
+}

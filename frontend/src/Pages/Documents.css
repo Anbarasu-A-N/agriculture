@@ -1,0 +1,28 @@
+.requireddoc {
+    padding: 20px;
+  }
+
+  div[id='requireddoc1']{
+    margin-left: 50px;
+  }
+  
+  h1#requireddoc {
+    color: #333;
+    font-size: 30px;
+    text-align: center;
+  }
+
+li[id='requireddoc1']{
+    padding-top: 20px;
+    margin-left: 20px;
+}
+
+h2[id='requireddoc1']{
+    margin-bottom: 0px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.docbgcolor{
+  background-color: #ccc;
+  
+}
