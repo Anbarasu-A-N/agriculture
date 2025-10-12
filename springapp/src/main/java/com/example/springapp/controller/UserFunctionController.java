@@ -2,17 +2,16 @@ package com.example.springapp.controller;
 
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
+// import java.nio.file.Files;
+// import java.nio.file.Path;
+// import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
+//import org.springframework.core.io.Resource;
+//import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -33,6 +32,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.example.springapp.entity.ChangePasswordRequest;
 import com.example.springapp.entity.Contact;
 import com.example.springapp.entity.Loan;
@@ -46,6 +47,14 @@ import com.example.springapp.service.LoanService;
 import com.example.springapp.service.ReviewService;
 import com.example.springapp.service.UserFunctionService;
 
+import io.github.cdimascio.dotenv.Dotenv;
+import jakarta.annotation.PostConstruct;
+
+import com.amazonaws.services.s3.model.GetObjectRequest;
+import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.util.IOUtils;
+
+
 @CrossOrigin
 @RestController
 @RequestMapping("/userfunction")
@@ -54,6 +63,9 @@ public class UserFunctionController {
     @Autowired
     @Qualifier("userFunctionServiceImpl")
     private UserFunctionService userFunctionService;
+
+    @Autowired
+    private UserFunctionRepository userFunctionRepository;
 
     @GetMapping("/adminGetDetails")
     public List<Users> getAllUsers() {
@@ -75,9 +87,90 @@ public class UserFunctionController {
         }
     }
 
+    @Autowired
+    private AmazonS3 amazonS3;
+    Dotenv dotenv = Dotenv.load();
 
+    String bucketName = dotenv.get("AWS_S3_BUCKET");
+    String folderName = dotenv.get("AWS_S3_FOLDER");
 
     
+    @PostConstruct
+    public void validateConfig() {
+        if (!StringUtils.hasText(bucketName)) {
+            throw new IllegalStateException("AWS S3 bucket name is not configured");
+        }
+        if (!StringUtils.hasText(folderName)) {
+            throw new IllegalStateException("AWS S3 folder name is not configured");
+        }
+    }
+
+    @GetMapping("/getImage/{imageName}")
+    public ResponseEntity<byte[]> getImage(@PathVariable String imageName) {
+        try {
+            // Include folder prefix in the S3 object key
+            String objectKey = folderName + "/" + imageName;
+            S3Object s3Object = amazonS3.getObject(new GetObjectRequest(bucketName, objectKey));
+            byte[] imageBytes = IOUtils.toByteArray(s3Object.getObjectContent());
+
+            HttpHeaders headers = new HttpHeaders();
+            //headers.setContentType(MediaType.IMAGE_JPEG); // Adjust based on file extension if needed
+            String extension = imageName.substring(imageName.lastIndexOf(".") + 1).toLowerCase();
+            MediaType mediaType = switch (extension) {
+                case "png" -> MediaType.IMAGE_PNG;
+                case "gif" -> MediaType.IMAGE_GIF;
+                default -> MediaType.IMAGE_JPEG;
+            };
+            headers.setContentType(mediaType);
+            headers.setContentLength(imageBytes.length);
+
+            return new ResponseEntity<>(imageBytes, headers, HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PostMapping("/{userId}/uploadImage")
+    public ResponseEntity<String> uploadImage(@PathVariable Integer userId, @RequestParam MultipartFile file) {
+        try {
+            Users userFunction = userFunctionRepository.findById(userId).orElse(null);
+
+            if (userFunction == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found.");
+            }
+
+            String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+            String uniqueFileName = userId + "_" + System.currentTimeMillis() + "_" + fileName;
+
+            // Include folder prefix in the S3 object key
+            String objectKey = folderName + "/" + uniqueFileName;
+
+            // Upload file to S3
+            ObjectMetadata metadata = new ObjectMetadata();
+            metadata.setContentLength(file.getSize());
+            metadata.setContentType(file.getContentType());
+            
+            amazonS3.putObject(bucketName, objectKey, file.getInputStream(), metadata);
+
+            // Update the user's profileImagePath with the file name (without folder prefix)
+            userFunction.setProfileImagePath(uniqueFileName);
+            userFunctionRepository.save(userFunction);
+
+            return ResponseEntity.ok("Image uploaded successfully!");
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to upload image.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal server error.");
+        }
+    }
+
+
+    /*
+
+    // This is For Local Image Retrieval
     @GetMapping("/getImage/{imageName}")
     public ResponseEntity<Resource> getImage(@PathVariable String imageName) {
         try {
@@ -103,8 +196,7 @@ public class UserFunctionController {
    
 
     
-    @Autowired
-    private UserFunctionRepository userFunctionRepository;
+    
 
     @Value("${upload.path}")
     private String uploadPath;
@@ -146,6 +238,8 @@ public class UserFunctionController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal server error.");
         }
     }
+
+    */
 
  
 
@@ -212,30 +306,30 @@ public class UserFunctionController {
     private PasswordEncoder passwordEncoder; // Inject PasswordEncoder
 
     @PostMapping("/verifyOtpAndUpdatePassword")
-public ResponseEntity<String> verifyOtpAndUpdatePassword(
-        @RequestParam String emailId,
-        @RequestParam String otp,
-        @RequestParam String newPassword) {
-    // Validate password strength
-    if (newPassword.length() < 8) {
-        return new ResponseEntity<>("Password must be at least 8 characters long", HttpStatus.BAD_REQUEST);
-    }
-    if (!newPassword.matches(".*[!@#$%^&*(),.?\":{}|<>].*")) {
-        return new ResponseEntity<>("Password must include at least one special character", HttpStatus.BAD_REQUEST);
-    }
+    public ResponseEntity<String> verifyOtpAndUpdatePassword(
+            @RequestParam String emailId,
+            @RequestParam String otp,
+            @RequestParam String newPassword) {
+        // Validate password strength
+        if (newPassword.length() < 8) {
+            return new ResponseEntity<>("Password must be at least 8 characters long", HttpStatus.BAD_REQUEST);
+        }
+        if (!newPassword.matches(".*[!@#$%^&*(),.?\":{}|<>].*")) {
+            return new ResponseEntity<>("Password must include at least one special character", HttpStatus.BAD_REQUEST);
+        }
 
-    Users user = userFunctionService.findByEmailId(emailId);
-    if (user != null && user.getOtp() != null && user.getOtp().equals(otp)) {
-        user.setPassword(passwordEncoder.encode(newPassword));
-        user.setOtp(null);
-        userFunctionService.userFunction(user);
-        System.out.println("Password updated for user: " + emailId);
-        return new ResponseEntity<>("Password updated successfully", HttpStatus.OK);
-    } else {
-        System.out.println("OTP verification failed for email: " + emailId);
-        return new ResponseEntity<>("Invalid OTP or user not found", HttpStatus.BAD_REQUEST);
+        Users user = userFunctionService.findByEmailId(emailId);
+        if (user != null && user.getOtp() != null && user.getOtp().equals(otp)) {
+            user.setPassword(passwordEncoder.encode(newPassword));
+            user.setOtp(null);
+            userFunctionService.userFunction(user);
+            System.out.println("Password updated for user: " + emailId);
+            return new ResponseEntity<>("Password updated successfully", HttpStatus.OK);
+        } else {
+            System.out.println("OTP verification failed for email: " + emailId);
+            return new ResponseEntity<>("Invalid OTP or user not found", HttpStatus.BAD_REQUEST);
+        }
     }
-}
 
 
     

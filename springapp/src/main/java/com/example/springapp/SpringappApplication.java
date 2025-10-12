@@ -1,3 +1,36 @@
+
+
+package com.example.springapp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Contact;
+import io.swagger.v3.oas.annotations.info.Info;
+
+@SpringBootApplication
+@OpenAPIDefinition(
+        info = @Info(
+                title = "JWT Authentication API",
+                version = "1.1.2",
+                description = "API for JWT-based authentication and user management",
+                contact = @Contact(
+                        name = "ANBARASU A N",
+                        email = "allsmart.org@gmail.com"
+                )
+        )
+)
+public class SpringappApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringappApplication.class, args);
+    }
+}
+
+
+/*
+
 package com.example.springapp;
 
 import org.springframework.boot.SpringApplication;
@@ -29,3 +62,8 @@ public class SpringappApplication {
 	}
 
 }
+
+
+/*
+ * 
+ */
