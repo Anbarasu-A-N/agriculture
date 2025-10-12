@@ -10,37 +10,23 @@ import static org.springframework.http.HttpMethod.HEAD;
 import static org.springframework.http.HttpMethod.PATCH;
 import static org.springframework.http.HttpMethod.POST;
 import static org.springframework.http.HttpMethod.PUT;
-
 import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-@Component
 public class MyConstant {
-
     public static final String AUTH = "/api/v1/auth";
     public static final String ADMIN = "/userfunction/admin";
     public static final String LOGIN = "/login";
     public static final String REGISTER = "/register";
-
-    // Inject allowed origins from application.properties
-    @Value("${allowed.origins:http://localhost:5173,http://localhost:5173/**}")
-    private static String allowedOrigins;
-
-    public static final List<String> ORIGINS = Arrays.asList(
-        allowedOrigins != null ? allowedOrigins.split(",") : new String[]{"http://localhost:5173", "http://localhost:5173/**"}
-    );
-
+    public static final List<String> ORIGINS = Arrays.asList("http://localhost:5173/**","http://localhost:5173");
     public static final List<String> HEADERS = Arrays.asList(AUTHORIZATION, CONTENT_TYPE);
-    public static final List<String> METHODS = Arrays.asList(
-        GET.name(), POST.name(), PATCH.name(), PUT.name(), DELETE.name(), HEAD.name()
-    );
+    public static final List<String> METHODS = Arrays.asList(GET.name(), POST.name(), PATCH.name(),
+            PUT.name(), DELETE.name(), HEAD.name());
 
     // JsonWebToken
-    // Inject server URL from application.properties
-    @Value("${jwt.server.url:http://localhost:8082}")
+    @Value("${jwt.server.url:http://localhost:8080}")
     private static String jwtServerUrl;
 
     public static final String JWT_SERVER_URL = jwtServerUrl != null ? jwtServerUrl : "http://localhost:8082";
@@ -49,6 +35,7 @@ public class MyConstant {
     public static final String JWT_DESCRIPTION = "Provide the JWT token.";
     public static final String JWT_BEARER_FORMAT = "JWT";
 }
+
 
 
 
