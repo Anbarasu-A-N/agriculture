@@ -1,4 +1,5 @@
 
+
 package com.example.springapp.config;
 
 import org.springframework.boot.CommandLineRunner;
@@ -43,6 +44,7 @@ public class UserCLI implements CommandLineRunner {
         System.out.println("Admin user inserted successfully!");
     }
 }
+
 
 
 /*

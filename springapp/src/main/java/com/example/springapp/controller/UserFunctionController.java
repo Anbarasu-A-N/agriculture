@@ -46,8 +46,7 @@ import com.example.springapp.repository.UserFunctionRepository;
 import com.example.springapp.service.LoanService;
 import com.example.springapp.service.ReviewService;
 import com.example.springapp.service.UserFunctionService;
-
-import io.github.cdimascio.dotenv.Dotenv;
+import org.springframework.beans.factory.annotation.Value;
 import jakarta.annotation.PostConstruct;
 
 import com.amazonaws.services.s3.model.GetObjectRequest;
@@ -89,10 +88,12 @@ public class UserFunctionController {
 
     @Autowired
     private AmazonS3 amazonS3;
-    Dotenv dotenv = Dotenv.load();
+    
+    @Value("${aws.s3.bucket}")
+    private String bucketName;
 
-    String bucketName = dotenv.get("AWS_S3_BUCKET");
-    String folderName = dotenv.get("AWS_S3_FOLDER");
+    @Value("${aws.s3.folder}")
+    private String folderName;
 
     
     @PostConstruct
