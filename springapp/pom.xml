@@ -29,11 +29,6 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>2.6.0</version>
-        </dependency>
 
         <!-- JWT -->
         <dependency>
@@ -155,6 +150,7 @@
     </dependencies>
 
     <build>
+        <finalName>app</finalName> <!-- will create app.jar -->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

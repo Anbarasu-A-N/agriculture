@@ -29,7 +29,7 @@ public class MyConstant {
     @Value("${jwt.server.url:http://localhost:8080}")
     private static String jwtServerUrl;
 
-    public static final String JWT_SERVER_URL = jwtServerUrl != null ? jwtServerUrl : "http://localhost:8082";
+    public static final String JWT_SERVER_URL = jwtServerUrl != null ? jwtServerUrl : "http://localhost:8080";
     public static final String JWT_SECURITY_SCHEME_NAME = "bearerAuth";
     public static final String JWT_SCHEME = "bearer";
     public static final String JWT_DESCRIPTION = "Provide the JWT token.";
