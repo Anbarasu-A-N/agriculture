@@ -42,6 +42,7 @@ public class SecurityConfig {
                             "/userfunction/verifyOtpAndUpdatePassword",
                             "/support",
                             "/support/**",
+                            "/actuator/**",
                             "/userfunction/getImage",
                             "/userfunction/getImage/**"
                         )
